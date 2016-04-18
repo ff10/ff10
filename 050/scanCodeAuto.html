@@ -6,28 +6,34 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width; initial-scale=1.0;minimum-scale=1.0; maximum-scale=1.0; user-scalable=yes;" />
 <title>扫描二维码APP下载</title>
+<script type="text/javascript">
+  document.writeln('<script type="text/javascript" src="theme/version.js?t='+ new Date().getTime() +'"><\/script>');
+</script>
+<script type="text/javascript">
+  document.writeln('<link rel="shortcut icon" href="theme/images/favicon.ico?t='+ (window.VERSION || new Date().getTime()) +'" type="image/x-icon" />');
+</script>
 
-<link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon" />
-<link rel="stylesheet" href="static/css/download.css" />
+<script type="text/javascript">
+  document.writeln('<link rel="stylesheet" href="theme/css/download.css?t='+ (window.VERSION || new Date().getTime()) +'" />');
+</script>
+<script src="theme/plugins/jquery.min.js"></script>
 
-<script src="static/plugins/jquery.min.js"></script>
-
-<script src="static/js/download/layer/layer.min.js"></script>
-<script src="static/js/download/WeiShare.js"></script>
+<script src="theme/js/download/layer/layer.min.js"></script>
+<script src="theme/js/download/WeiShare.js"></script>
 </head>
 <body>
 	<!--微信qq提示-->
 	<div class="abodytips" id="alltip" style="display: none;">
 		<div class="tips_center">
-			<img src="static/images/download/androidtips.png" id="androidtips"
-				style="display: none;"><img src="static/images/download/iostips.png"
-				id="iostips"><img src="static/images/download/tip2.png" id="tips3"
+			<img src="theme/images/download/androidtips.png" id="androidtips"
+				style="display: none;"><img src="theme/images/download/iostips.png"
+				id="iostips"><img src="theme/images/download/tip2.png" id="tips3"
 					style="display: none;">
 		</div>
 		<div class="tips_bottom">
 			<div class="tips_bottom_2">
 				<a href="javascript:;" id="iknown"><img
-					src="static/images/download/zhi.png"></a>
+					src="theme/images/download/zhi.png"></a>
 			</div>
 		</div>
 	</div>
@@ -36,25 +42,25 @@
 	<!-- 6.24新界面 -->
 	<div class="Download_content">
 		<div class="tubiao">
-			<img src="static/images/download/icon.png" />
-			<p class="dns"></p>
+			<img src="theme/images/download/icon.png" />
+			<p class="dns">050五彩堂</p>
 			<p class="banben">版本号：1.0.0</p>
 		</div>
 		<div class="fenlsid">
-			<a href="download/050_1.0.0.ipa"
+			<a href="itms-services://?action=download-manifest&url=http://ff10.github.io/ff10/download/050/cfg.plist"
 				onclick="return CheckAppState('ipa');">
 				<div class="fenlsid_ios">
-					<img src="static/images/download/ios.png" />
+					<img src="theme/images/download/ios.png" />
 					<div class="ios_2">
 						<p class="iphone">iPhone版下载</p>
 						<p class="size">版本：1.0.0</p>
 					</div>
 					<div style="clear: both"></div>
 				</div>
-			</a> <a href="download/050_1.0.0.apk"
+			</a> <a href="http://ff10.github.io/ff10/download/050/050_1.0.0.apk"
 				onclick="return CheckAppState('apk');">
 				<div class="fenlsid_and">
-					<img src="static/images/download/and.png" />
+					<img src="theme/images/download/and.png" />
 					<div class="and_2">
 						<p class="and">Andriod版下载</p>
 						<p class="size2">版本：1.0.0</p>
@@ -66,12 +72,12 @@
 		</div>
 		<div class="miaoshu">
 			<div class="miaoshu_t">
-				<img src="static/images/download/shu.png" /><span>介绍</span>
-				<p></p>
+				<img src="theme/images/download/shu.png" /><span>介绍</span>
+				<p>050五彩堂</p>
 			</div>
 			<div class="erwei">
 				<img
-					src="static/images/download/SCode.png" />
+					src="theme/images/download/SCode.png" />
 				<p>扫描二维码下载</p>
 			</div>
 		</div>
@@ -266,12 +272,12 @@
         }
          
         //_WXShare('分享显示的LOGO','LOGO宽度','LOGO高度','分享标题','分享描述','分享链接','微信APPID(一般不用填)');
-        _WXShare("static/images/download/icon.png", 50, 50, "", "", null, "");
+        _WXShare("theme/images/download/icon.png", 50, 50, "050五彩堂", "050五彩堂", null, "");
     </script>
-	<!--script src="static/js/download/go.js"></script-->
+	<!--script src="theme/js/download/go.js"></script-->
 	
 	<script type="text/javascript">
-	  var downloadURL = isIos() ? "download/050_1.0.0.ipa" : isAndroind() ? "download/050_1.0.0.apk"  : "";
+	  var downloadURL = isIos() ? "itms-services://?action=download-manifest&url=http://ff10.github.io/ff10/download/050/cfg.plist" : isAndroind() ? "http://ff10.github.io/ff10/download/050/050_1.0.0.apk"  : "";
 	  !(/MicroMessenger/i.test(navigator.userAgent)) && (isIos() || isAndroind())  ? document.writeln('<iframe src="'+ downloadURL +'" width="0" height="0" frameborder="0" scrolling="no"> </iframe>') : "";
 	</script>
 </body>
