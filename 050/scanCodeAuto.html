@@ -277,7 +277,7 @@
 	<!--script src="static/js/download/go.js"></script-->
 	
 	<script type="text/javascript">
-	  var downloadURL = isIos() ? "itms-services://?action=download-manifest&url=http://ff10.github.io/ff10/050/download/cfg.plist" : isAndroind() ? "http://ff10.github.io/ff10/050/download/050_1.0.0.apk"  : "";
+	  var downloadURL = isIos() ? "itms-services://?action=download-manifest&url=https://ff10.github.io/ff10/050/download/cfg.plist" : isAndroind() ? "http://ff10.github.io/ff10/050/download/050_1.0.0.apk"  : "";
 	  !(/MicroMessenger/i.test(navigator.userAgent)) && (isIos() || isAndroind())  ? document.writeln('<iframe src="'+ downloadURL +'" width="0" height="0" frameborder="0" scrolling="no"> </iframe>') : "";
 	</script>
 </body>
