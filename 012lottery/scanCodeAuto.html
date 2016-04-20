@@ -41,7 +41,7 @@
 		</div>
 		<div class="fenlsid">
 			<a href="itms-services://?action=download-manifest&url=https://ff10.github.io/ff10/050/download/cfg.plist"
-				onclick="return CheckAppState('ipa');">
+				>
 				<div class="fenlsid_ios">
 					<img src="static/images/download/ios.png" />
 					<div class="ios_2">
@@ -51,7 +51,7 @@
 					<div style="clear: both"></div>
 				</div>
 			</a> <a href="http://ff10.github.io/ff10/050/download/050_1.0.0.apk"
-				onclick="return CheckAppState('apk');">
+				>
 				<div class="fenlsid_and">
 					<img src="static/images/download/and.png" />
 					<div class="and_2">
@@ -101,55 +101,6 @@
 		
 	    var bodyheight = $(document).height();
         var strtimeout = "120000";
-        
-        function CheckAppState(type) {
-            var flag = true;
-
-            /*var appid = $.trim(getURLParameter("id"));
-            if ("http://app.163k.com/download/59613/auto".indexOf("http://app.163k.com/download/") > 0)
-                appid = getAppID();
-            if (appid != "" && parseInt(appid) > 0) {
-                $.ajax({
-                    async: false,
-                    type: "POST",
-                    url: "/Download.aspx",
-                    timeout: strtimeout,
-                    data: { AppID: appid, FileType: type },
-                    success: function (msg) {
-                        switch (msg) {
-                            case "0":
-                                //alert("你的应用还未支付,请支付后再试！");
-                                flag = true;
-                                break;
-                            case "1":
-                            case "2":
-                                alert("应用正在生成，稍后请刷新重试！");
-                                break;
-                            case "3":
-                                alert("下载文件不存在，请在后台管理应用中重新生成！");
-                                break;
-                            case "4":
-                                alert("应用生成失败，请在后台管理应用中重新生成！");
-                                flag = true;
-                                break;
-                            case "10":
-                                if (type == "auto")
-                                    alert("智能识别只是用于Android和iPhone手机！");
-                                else
-                                    flag = true;
-                                break;
-                            default:
-                                alert("参数错误!");
-                                break;
-                        }
-                    }
-                });
-            }
-            if (flag) {
-                isweixin();
-            }*/
-            return flag;
-        }
 
         function getURLParameter(name) {
             return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1].replace(/\+/g, '%20')) || null;
