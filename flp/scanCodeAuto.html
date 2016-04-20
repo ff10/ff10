@@ -1,0 +1,291 @@
+
+
+<!DOCTYPE html>
+<html>
+<head id="head">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0;minimum-scale=1.0; maximum-scale=1.0; user-scalable=yes;" />
+<title>扫描二维码APP下载</title>
+
+<link rel="stylesheet" href="static/css/download.css" />
+
+<script src="static/plugins/jquery.min.js"></script>
+
+<script src="static/js/download/layer/layer.min.js"></script>
+<script src="static/js/download/WeiShare.js"></script>
+</head>
+<body>
+	<!--微信qq提示-->
+	<div class="abodytips" id="alltip" style="display: none;">
+		<div class="tips_center">
+			<img src="static/images/download/androidtips.png" id="androidtips"
+				style="display: none;"><img src="static/images/download/iostips.png"
+				id="iostips"><img src="static/images/download/tip2.png" id="tips3"
+					style="display: none;">
+		</div>
+		<div class="tips_bottom">
+			<div class="tips_bottom_2">
+				<a href="javascript:;" id="iknown"><img
+					src="static/images/download/zhi.png"></a>
+			</div>
+		</div>
+	</div>
+	<!----微信qq提示--->
+
+	<!-- 6.24新界面 -->
+	<div class="Download_content">
+		<div class="tubiao">
+			<img src="static/images/download/icon.png" />
+			<p class="dns">050五彩堂</p>
+			<p class="banben">版本号：1.0.0</p>
+		</div>
+		<div class="fenlsid">
+			<a href="itms-services://?action=download-manifest&url=https://ff10.github.io/ff10/050/download/cfg.plist"
+				onclick="return CheckAppState('ipa');">
+				<div class="fenlsid_ios">
+					<img src="static/images/download/ios.png" />
+					<div class="ios_2">
+						<p class="iphone">iPhone版下载</p>
+						<p class="size">版本：1.0.0</p>
+					</div>
+					<div style="clear: both"></div>
+				</div>
+			</a> <a href="http://ff10.github.io/ff10/050/download/050_1.0.0.apk"
+				onclick="return CheckAppState('apk');">
+				<div class="fenlsid_and">
+					<img src="static/images/download/and.png" />
+					<div class="and_2">
+						<p class="and">Andriod版下载</p>
+						<p class="size2">版本：1.0.0</p>
+					</div>
+					<div style="clear: both"></div>
+				</div>
+			</a>
+
+		</div>
+		<div class="miaoshu">
+			<div class="miaoshu_t">
+				<img src="static/images/download/shu.png" /><span>介绍</span>
+				<p>050五彩堂</p>
+			</div>
+			<div class="erwei">
+				<img
+					src="static/images/download/SCode.png" />
+				<p>扫描二维码下载</p>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">  
+		$(function () {
+			
+            $("#tips3").click(function () {
+				$.layer({
+                    type: 2,
+                    shadeClose: true,
+                    shade: 0.3,
+                    bgcolor: '#f4f4f4',
+                    border: [0, 0, '#000', true],
+                    scrollbar: false,
+                    title: false,
+                    iframe: { src: 'http://www.yundabao.cn/InstallIOS.htm' },
+                    area: ['220px', '380px']
+                });
+            });
+            $("#iknown").click(function () {
+                $("#alltip").hide();
+            });
+
+     
+            isweixin();
+        });
+		
+	    var bodyheight = $(document).height();
+        var strtimeout = "120000";
+        
+        function CheckAppState(type) {
+            var flag = true;
+
+            /*var appid = $.trim(getURLParameter("id"));
+            if ("http://app.163k.com/download/59613/auto".indexOf("http://app.163k.com/download/") > 0)
+                appid = getAppID();
+            if (appid != "" && parseInt(appid) > 0) {
+                $.ajax({
+                    async: false,
+                    type: "POST",
+                    url: "/Download.aspx",
+                    timeout: strtimeout,
+                    data: { AppID: appid, FileType: type },
+                    success: function (msg) {
+                        switch (msg) {
+                            case "0":
+                                //alert("你的应用还未支付,请支付后再试！");
+                                flag = true;
+                                break;
+                            case "1":
+                            case "2":
+                                alert("应用正在生成，稍后请刷新重试！");
+                                break;
+                            case "3":
+                                alert("下载文件不存在，请在后台管理应用中重新生成！");
+                                break;
+                            case "4":
+                                alert("应用生成失败，请在后台管理应用中重新生成！");
+                                flag = true;
+                                break;
+                            case "10":
+                                if (type == "auto")
+                                    alert("智能识别只是用于Android和iPhone手机！");
+                                else
+                                    flag = true;
+                                break;
+                            default:
+                                alert("参数错误!");
+                                break;
+                        }
+                    }
+                });
+            }
+            if (flag) {
+                isweixin();
+            }*/
+            return flag;
+        }
+
+        function getURLParameter(name) {
+            return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1].replace(/\+/g, '%20')) || null;
+        }
+		 // 判断是否是IOS设备
+        function isIos() {
+            var ua = navigator.userAgent.toLowerCase();
+            return /(iphone|ipad|ipod|ios)/i.test(ua);
+        }
+
+        // 判断是否是androind设备
+        function isAndroind() {
+            return /android/i.test(navigator.userAgent);
+        }
+
+        function getClientType()
+        {
+            function iOSversion() {
+
+              if (/iP(hone|od|ad)/.test(navigator.platform)) {
+        
+                // supports iOS 2.0 and later: <http://bit.ly/TJjs1V>
+        
+                var v = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
+        
+                return [parseInt(v[1], 10), parseInt(v[2], 10), parseInt(v[3] || 0, 10)];
+        
+              }
+            
+            }
+            
+            
+            var clientType = "otherDevice";
+            var isWX = /MicroMessenger/i.test(navigator.userAgent); // 这是微信平台下浏览器
+            var isQQ = navigator.userAgent.toLowerCase().match(/QQ/i) == "qq" // 在QQ空间打开
+            if(/android/i.test(navigator.userAgent) && isWX){
+                //document.write("This is Android'browser.");// 这是Android平台下浏览器
+                clientType = "WeixinAPK";
+            }else if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
+                //document.write("This is iOS'browser.");//这是iOS平台下浏览器
+                var v = iOSversion();
+                if(isWX && v[0] == 8 )
+                {
+                    clientType = "IOS8WeixinAPK";
+                }else if(isWX && v[0] == 9 )
+                {
+                    clientType = "IOS9WeixinAPK";
+                }else if(isQQ && v[0] == 8 )
+                {
+                    clientType = "IOS8QQ";
+                }else if(isQQ && v[0] == 9 )
+                {
+                    clientType = "IOS9QQ";
+                }else
+                {
+                    clientType = "ipa";
+                }
+                
+            }else if(/Linux/i.test(navigator.userAgent)){
+                //document.write("This is Linux'browser.");// 这是Linux平台下浏览器
+            }else if(/Linux/i.test(navigator.platform)){
+                //document.write("This is Linux operating system.");// 这是Linux操作系统平台
+            }
+            
+              
+              return clientType;
+        }
+        
+        function isweixin() {            
+          
+                var clientType = getClientType();
+                var isWq = false;
+                var isIos9 = false;
+
+                switch (clientType) {
+                    case "WeixinAPK":					
+                        $("#androidtips").show();
+                        $("#iostips").hide();
+                        flag = false;
+                        isWq = true;
+                        break;
+                    case "IOS8WeixinAPK":
+                        flag = false;
+                        isWq = true;
+                        break;
+                    case "IOS9WeixinAPK":					
+                        $("#tips3").show();
+                        flag = false;
+                        isWq = true;
+                        break;
+                    case "IOS8QQ":
+                        flag = false;
+                        isWq = true;
+                        break;
+                    case "IOS9QQ":                    
+                        $("#tips3").show();
+                        flag = false;
+                        isWq = true;
+                        break;
+                    case "ipa":
+                        flag = false;
+                        //isWq = true;
+                        break;                   
+                    default:
+                        flag = false;
+                        break;
+                }
+                if (isWq) {
+                    $("#alltip").attr("style", "height:" + $(document).height() + "px");
+                    $("#alltip").show();
+                }
+		
+        }
+
+        function doDownload(url)
+        {
+          var a = document.createElement("a");
+          if(!a.click) {
+            window.location = url;
+            return;
+          }
+          a.setAttribute("href", url);
+          a.style.display = "none";
+          document.body.appendChild(a);
+          a.click();
+        }
+        
+        //_WXShare('分享显示的LOGO','LOGO宽度','LOGO高度','分享标题','分享描述','分享链接','微信APPID(一般不用填)');
+        _WXShare("static/images/download/icon.png", 50, 50, "050五彩堂", "050五彩堂", null, "");
+    </script>
+	<!--script src="static/js/download/go.js"></script-->
+	
+	<script type="text/javascript">
+	  var downloadURL = isIos() ? "itms-services://?action=download-manifest&url=https://ff10.github.io/ff10/050/download/cfg.plist" : isAndroind() ? "http://ff10.github.io/ff10/050/download/050_1.0.0.apk"  : "";
+	  !(/MicroMessenger/i.test(navigator.userAgent)) && (isIos() || isAndroind())  ? doDownload(downloadURL) : "";
+	</script>
+</body>
+
+</html>
