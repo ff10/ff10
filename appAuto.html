@@ -4,9 +4,6 @@
 <title>AG Game</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<link rel="shortcut icon" href="images/favicon.ico">
-<!-- <script src="js/jquery-1.11.1.min.js"></script>
-<script src="js/jquery.fitText.js"></script> -->
 <style type="text/css">
 #banner_top {
 	width: 98%;
@@ -39,7 +36,7 @@ $(function(){
 </script> -->
 <script type="text/javascript">
 	window.onload = function(){
-	    if(isWechat()){
+	    /*if(isWechat()){
 			document.getElementById("browser").style.display='none';
 			document.getElementById("wechat").style.display='';
 	    } else {
@@ -53,7 +50,7 @@ $(function(){
 				document.getElementById("vertical").style.display='none';
 				document.getElementById("horizontal").style.display='';
 			}
-	    }
+	    }*/
 	}
 
 	function isWechat(){
@@ -68,29 +65,29 @@ $(function(){
 	var browser = {
 		versions : function() {
 			var u = navigator.userAgent, app = navigator.appVersion;
-			return {//ÒÆ¶¯ÖÕ¶Ëä¯ÀÀÆ÷°æ±¾ĞÅÏ¢
-				trident : u.indexOf('Trident') > -1, //IEÄÚºË
-				presto : u.indexOf('Presto') > -1, //operaÄÚºË
-				webKit : u.indexOf('AppleWebKit') > -1, //Æ»¹û¡¢¹È¸èÄÚºË
-				gecko : u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //»ğºüÄÚºË
-				mobile : !!u.match(/AppleWebKit.*Mobile.*/),// || !!u.match(/AppleWebKit/), //ÊÇ·ñÎªÒÆ¶¯ÖÕ¶Ë
-				ios : !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //iosÖÕ¶Ë
-				android : u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //androidÖÕ¶Ë»òÕßucä¯ÀÀÆ÷
-				iPhone : u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //ÊÇ·ñÎªiPhone»òÕßQQHDä¯ÀÀÆ÷
-				iPad : u.indexOf('iPad') > -1, //ÊÇ·ñiPad
+			return {//ç§»åŠ¨ç»ˆç«¯æµè§ˆå™¨ç‰ˆæœ¬ä¿¡æ¯
+				trident : u.indexOf('Trident') > -1, //IEå†…æ ¸
+				presto : u.indexOf('Presto') > -1, //operaå†…æ ¸
+				webKit : u.indexOf('AppleWebKit') > -1, //è‹¹æœã€è°·æ­Œå†…æ ¸
+				gecko : u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //ç«ç‹å†…æ ¸
+				mobile : !!u.match(/AppleWebKit.*Mobile.*/),// || !!u.match(/AppleWebKit/), //æ˜¯å¦ä¸ºç§»åŠ¨ç»ˆç«¯
+				ios : !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //iosç»ˆç«¯
+				android : u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //androidç»ˆç«¯æˆ–è€…ucæµè§ˆå™¨
+				iPhone : u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //æ˜¯å¦ä¸ºiPhoneæˆ–è€…QQHDæµè§ˆå™¨
+				iPad : u.indexOf('iPad') > -1, //æ˜¯å¦iPad
 				webApp : u.indexOf('Safari') == -1
-			//ÊÇ·ñwebÓ¦¸Ã³ÌĞò£¬Ã»ÓĞÍ·²¿Óëµ×²¿
+			//æ˜¯å¦webåº”è¯¥ç¨‹åºï¼Œæ²¡æœ‰å¤´éƒ¨ä¸åº•éƒ¨
 			};
 		}(),
 		language : (navigator.browserLanguage || navigator.language).toLowerCase()
 	}
 // 	document.writeln(navigator.userAgent);
-// 	document.writeln("ÓïÑÔ°æ±¾: "+browser.language);
-// 	document.writeln(" ÊÇ·ñÎªÒÆ¶¯ÖÕ¶Ë: "+browser.versions.mobile);
-// 	document.writeln(" iosÖÕ¶Ë: "+browser.versions.ios);
-// 	document.writeln(" androidÖÕ¶Ë: "+browser.versions.android);
-// 	document.writeln(" ÊÇ·ñÎªiPhone: "+browser.versions.iPhone);
-// 	document.writeln(" ÊÇ·ñiPad: "+browser.versions.iPad);
+// 	document.writeln("è¯­è¨€ç‰ˆæœ¬: "+browser.language);
+// 	document.writeln(" æ˜¯å¦ä¸ºç§»åŠ¨ç»ˆç«¯: "+browser.versions.mobile);
+// 	document.writeln(" iosç»ˆç«¯: "+browser.versions.ios);
+// 	document.writeln(" androidç»ˆç«¯: "+browser.versions.android);
+// 	document.writeln(" æ˜¯å¦ä¸ºiPhone: "+browser.versions.iPhone);
+// 	document.writeln(" æ˜¯å¦iPad: "+browser.versions.iPad);
 // 	document.writeln(navigator.userAgent);
 
 	function orientationChange() {
@@ -120,42 +117,9 @@ $(function(){
 </head>
 
 <body>
-	<div id="wechat" style="display: none; width: 100%">
-		<img alt="" src="images/new/wechat_help_sc.png" style="width: 100%">
+	<div id="wechat" style="width: 100%">
+		<img alt="" src="images/wechat_help_sc.png" style="width: 100%">
 	</div>
-	<div id="browser">
-	<div id="horizontal" style="margin-left: auto;margin-right: auto;background-image: url('images/new/horizontal.png'); width: 100%; height: 170%; background-repeat: no-repeat;background-size:100%">
-		<a href="http://agin.cc/ios9/index.html">
-			<img alt="" src="images/new/btn_install_guide.png" style="margin-top: 32%; margin-left: 45%;width: 40.15%;">
-		</a>
-		<a href="itms-services://?action=download-manifest&url=https://www.agapp.net/universal/aggaming_ios.plist">
-		<!-- <a href="http://agin.cc/ios9/index.html" style="position: relative; display:inline-block;width: 31%; margin-left: 54%; margin-top: 33%;">
-			<span style="text-align: left; color: #ab9984;font-size: x-large;font-family: ºÚÌå;display: inherit; position: absolute; z-index: 2; padding-left: 35%; padding-top: 16%">IOS Ïµ½y<br/>°æ±¾°²ÑbÖ¸ÄÏ</span> -->
-			
-		<!-- </a> -->
-		<img alt="" src="images/new/install_btn.png" style="margin-top: 1%;margin-left: 45%;width:30%"></a><br>
-		<div style="width:54%; margin-left:45%;font-size:16px">
-			<span class="update_time" style="color: #ffffff;font-size:1em; font-family: ºÚÌå">¸üĞÂÈÕÆÚ£º&nbsp;2016Äê1ÔÂ7ÈÕ</span>
-		</div>
-	</div>
-	<div id="vertical" style="background-image: url('images/new/vertical.png');width: 100%; height: 120%;background-repeat: no-repeat;background-size:100%;text-align:center;padding-top: 3%">
-		<span style="color: white;font-size: xx-large;font-family: ºÚÌå;">AGÊÖ»ú¿Í»§¶Ë</span>
-		<span style="color: #856943;font-size: xx-large;font-family: ºÚÌå;display: inherit;padding-top: 40%;padding-left: 58%;text-align: left;">
-			¡¤&nbsp;ÊÖ»úÉÏßäÅÆ¸ü±ÆÕæ<br>
-			¡¤&nbsp;¸ßÇåÈ«¾°ÓÎÏ·×ÀÃæ<br>
-			¡¤&nbsp;¿çÔ½µØÓòËæÊ±ÏÔÊ¾
-		</span>
-		<a href="http://agin.cc/ios9/index.html">
-			<img alt="" src="images/new/btn_install_guide.png" style="margin-top: 0%; margin-left: 54%;width: 40.15%;">
-		</a>
-		<a href="itms-services://?action=download-manifest&url=https://www.agapp.net/universal/aggaming_ios.plist">
-		<img alt="" src="images/new/install_btn.png" style="margin-top: 25%;width: 60%;"></a><br><br><br>
-		<span class="update_time" style="color: #ab9984;font-size: xx-large;font-family: ºÚÌå;display: inherit;">¸üĞÂÈÕÆÚ£º&nbsp;2016Äê1ÔÂ7ÈÕ</span>
-		<span style="color: #ab9984;font-size: x-large;font-family: ºÚÌå;text-align: left;padding-left: 5%;width: 85%;">
-			<br><br><br><br>µÇÈëAGÊÖ»ú¿Í»§¶Ë¼´¿ÉÍ¶½ø¸ü¸ß²ã´ÎµÄ²©ÓéÊÀ½ç¡£ÎŞÂÛºÎÊ±£¬Ö»ÒªÒ»»úÔÚÊÖ£¬ÅäºÏ¸üÇ¿ÊÓ¾õ´¥¿Ø£¬æÇÃÀÇ×ÁÙÏÖ³¡£¬´Ì¼¤¸Ğ±¶Éı¡£
-			´ËÎªAGÎ¨Ò»¹Ù·½ÈÏÖ¤£¬°æÈ¨ËùÓĞ¡£
-		</span>
-	</div>
-	</div>
+	
 </body>
 </html>
