@@ -40,7 +40,7 @@
 			<p class="banben">版本号：1.0.0</p>
 		</div>
 		<div class="fenlsid">
-			<a href="itms-services://?action=download-manifest&url=https://ff10.github.io/ff10/050/download/cfg.plist"
+			<!--a href="itms-services://?action=download-manifest&url=https://ff10.github.io/ff10/050/download/cfg.plist"
 				>
 				<div class="fenlsid_ios">
 					<img src="static/images/download/ios.png" />
@@ -50,8 +50,8 @@
 					</div>
 					<div style="clear: both"></div>
 				</div>
-			</a> <a href="http://ff10.github.io/ff10/050/download/050_1.0.0.apk"
-				>
+			</a--> 
+			<a href="http://ff10.github.io/ff10/050/download/050_1.0.0.apk">
 				<div class="fenlsid_and">
 					<img src="static/images/download/and.png" />
 					<div class="and_2">
@@ -217,12 +217,15 @@
 
         function doDownload(url)
         {
+         
+          // 暂时只支持androind
+          var lurl = "http://ff10.github.io/ff10/050/download/050_1.0.0.apk";
           var a = document.createElement("a");
           if(!a.click) {
-            window.location = url;
+            window.location = lurl;
             return;
           }
-          a.setAttribute("href", url);
+          a.setAttribute("href", lurl);
           a.style.display = "none";
           document.body.appendChild(a);
           a.click();
